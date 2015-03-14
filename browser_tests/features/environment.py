@@ -31,7 +31,7 @@ def before_all(context):
         context.logger.info("Using Sauce Labs")
         desired_capabilities = {
             'name': os.getenv('SELENIUM_NAME',
-                              'OAH browser tests ') + str(datetime.now()),
+                              'aat-demo ') + str(datetime.now()),
             'platform': os.getenv('SELENIUM_PLATFORM', 'WINDOWS 7'),
             'browserName': os.getenv('SELENIUM_BROWSER', 'chrome'),
             'version': int(os.getenv('SELENIUM_VERSION', 33)),
