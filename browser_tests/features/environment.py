@@ -112,7 +112,7 @@ def after_feature(context, feature):
 
 
 def after_all(context):
-    #context.base.close_browser()
+    context.base.close_browser()
     if context.browser == 'Sauce':
         base64string = base64.encodestring('%s:%s' %
                                            (context.sauce_config['username'],
