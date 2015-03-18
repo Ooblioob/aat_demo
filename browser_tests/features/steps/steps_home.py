@@ -6,14 +6,13 @@ from hamcrest.core.core.isequal import equal_to
 def step_homepage(context):
 	context.home.go()
 	# save this for later use
-	context.initial_cat_img_src = context.home.get_cat_image_src()
+	context.initial_cat = context.home.get_cat_image_src()
 	
-@when(u'I click the "love it" button')
+@when(u'I click "love it"')
 def step_click_love_it(context):
 	context.home.get_love_it_button().click()
 
-
 @then(u'a new cat image should be loaded into the page')
 def step_assert_new_cat_image(context):
-	context.home.wait_for_image_to_reload(context.initial_cat_img_src)
-	assert context.initial_cat_img_src != context.home.get_cat_image_src()
+	context.home.wait_for_image_to_reload(context.initial_cat)
+	assert context.initial_cat != context.home.get_cat_image_src()

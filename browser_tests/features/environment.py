@@ -10,12 +10,7 @@ from selenium import webdriver
 from pages.screenshot import Screenshot
 from pages.base import Base
 from pages.home import Home
-# from pages.loan_comparison import LoanComparison
-# from pages.loan_options import LoanOptions
-# from pages.navigation import Navigation
-# from pages.rate_checker import RateChecker
 from pages.utils import Utils
-
 
 try:
     import json
@@ -65,18 +60,6 @@ def before_all(context):
                         context.base_url, driver, 10, context.delay_secs)
     context.home = Home(context.logger, context.directory,
                         context.base_url, driver, 10, context.delay_secs)
-    # context.loan_comparison = LoanComparison(context.logger, context.directory,
-    #                                          context.base_url, driver, 10,
-    #                                          context.delay_secs)
-    # context.loan_options = LoanOptions(context.logger, context.directory,
-    #                                    context.base_url, driver, 10,
-    #                                    context.delay_secs)
-    # context.rate_checker = RateChecker(context.logger, context.directory,
-    #                                    context.base_url,
-    #                                    driver, 10, context.delay_secs)
-    # context.navigation = Navigation(context.logger, context.directory,
-    #                                 context.base_url,
-    #                                 driver, 10, context.delay_secs)
     context.screenshot = Screenshot(context.base, context.take_screenshots)
 
     context.utils = Utils(context.base)
@@ -143,7 +126,7 @@ def after_all(context):
 
 def setup_logger(context):
     # create logger
-    logger = logging.getLogger('OAH_browser_tests: ')
+    logger = logging.getLogger('aat_demo tests: ')
     logger.setLevel(context.log_level)
 
     # create console handler and set level to debug

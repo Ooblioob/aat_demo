@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
 class Home(Base):
+	# Selectors for the objects on the page
 	LOVE_IT_BUTTON_XPATH = "//button[text()='Love it']"
 	CAT_IMAGE_ID = "main_event"
 
@@ -10,10 +11,11 @@ class Home(Base):
 				 driver=None, driver_wait=10, delay_secs=0):
 		super(Home, self).__init__(logger, directory, base_url,
 								   driver, driver_wait, delay_secs)
-
+	# navivation
 	def go(self):
 		super(Home, self).go()
 
+	# get methods
 	def get_love_it_button(self):
 		return self.driver.find_element_by_xpath(self.LOVE_IT_BUTTON_XPATH)
 
